@@ -6,6 +6,7 @@ export const createPost = async (
 	res: Response
 ): Promise<void> => {
 	const { content, parentId } = req.body;
+
 	try {
 		const newPost = new Post({
 			content,
@@ -34,9 +35,7 @@ export const createPost = async (
 // fetch all the parent posts
 export const viewPost = async (req: Request, res: Response): Promise<void> => {
 	try {
-		const newPost = await Post.find({ parentId: null }).populate(
-			"comments"
-		);
+		const newPost = await Post.find({ parentId: null });
 
 		if (!newPost) throw new Error("No post found");
 
@@ -57,7 +56,7 @@ export const viewComments = async (
 
 		if (!comments) throw new Error("No comments found.");
 
-		res.status(200).json(comments);
+		res.status(200).json(comments.comments);
 	} catch (error: any) {
 		console.error(error);
 		res.status(500).json({

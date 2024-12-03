@@ -7,6 +7,7 @@ export default function loading() {
                 <div className="loader__sq"></div>
                 <div className="loader__sq"></div>
             </div>
+            <h1 className="text-xl text-center">Please wait while trigering Render service, once triggered it will not take time</h1>
         </div>
     )
 }

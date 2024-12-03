@@ -12,7 +12,10 @@ export default async function PostCards() {
     async function getPosts() {
         try {
             const posts = await fetch(process.env.NEXT_PUBLIC_API_URL + "/posts/view", {
-                cache: "no-cache"
+                cache: "no-cache",
+                next: {
+                    tags: ["fetchPosts"]
+                }
             });
 
             if (!posts.ok) {

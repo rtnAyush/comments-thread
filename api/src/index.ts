@@ -1,9 +1,8 @@
 import * as dotenv from "dotenv";
-import express, { Request, Response, NextFunction } from "express";
+import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import bodyParser from "body-parser";
-import WebSocket from "ws";
 
 dotenv.config();
 

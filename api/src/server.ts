@@ -7,12 +7,7 @@ import express, {
 require("dotenv").config();
 import routes from "./routes";
 import mongoose from "mongoose";
-import swaggerUi from "swagger-ui-express";
-import fs from "fs";
-import path from "path";
 
-// const swaggerFile = fs.readFileSync(path.resolve(__dirname, './swagger.json'), 'utf-8');
-// const swaggerDocument = JSON.parse(swaggerFile);
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
